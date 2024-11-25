@@ -35,7 +35,7 @@ int main(int argc, char** argv){
 			else if(tokens.front().type == SUB){
 				result = outputStack.top().value;
 				outputStack.pop();
-				result -= outputStack.top().value;
+				result = -1*result + outputStack.top().value;
 			}
 			else if(tokens.front().type == MUL){
 				result = outputStack.top().value;
@@ -45,7 +45,7 @@ int main(int argc, char** argv){
 			else if(tokens.front().type == DIV){
 				result = outputStack.top().value;
 				outputStack.pop();
-				result /= outputStack.top().value;
+				result = (1/result) * outputStack.top().value;
 			}
 			else if(tokens.front().type == EXPONENT){
 				int amount = outputStack.top().value;
